@@ -100,21 +100,21 @@ namespace Ship_war_vers_2
         #region AIGeneration
         public static void GenerateFieldAI()
         {
-            for (int i = 0; i < height; i++)
+            for (int y = 0; y < height; y++)
             {
 
                 int numberToChar = 64;
                 numberToChar++;
 
-                for (int j = 0; j < width; j++)
+                for (int x = 0; x < width; x++)
                 {
                     symbol = '.';
-                    if (i != 0 && j != 0)
+                    if (y != 0 && x != 0)
                     {
-                        field[i, j] = symbol;
+                        field[y, x] = symbol;
                     }
                 }
-                field[i, 0] = (char)numberToChar;
+                field[y, 0] = (char)numberToChar;
             }
         }
         public static void UnlockShot(int height, int width, char bullet)
@@ -122,23 +122,23 @@ namespace Ship_war_vers_2
             Console.WriteLine();
             int numberToChar = 63;
             int number = 47;
-            for (int i = 0; i < GridGeneration.height - 2; i++)
+            for (int y = 0; y < GridGeneration.height - 2; y++)
             {
                 number++;
-                for (int j = 0; j < GridGeneration.width; j++)
+                for (int x = 0; x < GridGeneration.width; x++)
                 {
                     numberToChar++;
 
-                    symbol = field[i, j];
-                    if (i == 0 && j >= 1)
+                    symbol = field[y, x];
+                    if (y == 0 && x >= 1)
                     {
                         symbol = (char)numberToChar;
                     }
-                    if (i >= 1 && j == 0)
+                    if (y >= 1 && x == 0)
                     {
                         symbol = (char)number;
                     }
-                    if (j == 10)
+                    if (x == 10)
                     {
                         symbol = '|';
                     }
@@ -146,9 +146,9 @@ namespace Ship_war_vers_2
                     {
                         symbol = '.';
                     }
-                    if (height == i && width == j)
+                    if (height == y && width == x)
                     {
-                        field[i, j] = bullet;
+                        field[y, x] = bullet;
                         symbol = bullet;
                     }
                     Console.Write(symbol);
@@ -161,22 +161,22 @@ namespace Ship_war_vers_2
             Console.WriteLine();
             int numberToChar = 63;
             int number = 47;
-            for (int i = 0; i < height - 2; i++)
+            for (int y = 0; y < height - 2; y++)
             {
                 number++;
-                for (int j = 0; j < width; j++)
+                for (int x = 0; x < width; x++)
                 {
                     numberToChar++;
-                    symbol = field[i, j];
-                    if (i == 0 && j >= 1)
+                    symbol = field[y, x];
+                    if (y == 0 && x >= 1)
                     {
                         symbol = (char)numberToChar;
                     }
-                    if (i >= 1 && j == 0)
+                    if (y >= 1 && x == 0)
                     {
                         symbol = (char)number;
                     }
-                    if (j == 10)
+                    if (x == 10)
                     {
                         symbol = '|';
                     }
@@ -215,26 +215,26 @@ namespace Ship_war_vers_2
             int numberToChar = 63;
             int number = 47;
             int f = 0;
-            for (int i = 0; i < GridGeneration.height - size; i++)
+            for (int y = 0; y < GridGeneration.height - size; y++)
             {
                 number++;
-                for (int j = 0; j < GridGeneration.width; j++)
+                for (int x = 0; x < GridGeneration.width; x++)
                 {
                     numberToChar++;
 
 
                     symbol = '.';
-                    if (i == 0 && j >= 1)
+                    if (y == 0 && x >= 1)
                     {
                         symbol = (char)numberToChar;
                     }
-                    if (i >= 1 && j == 0)
+                    if (y >= 1 && x == 0)
                     {
                         symbol = (char)number;
                     }
-                    if (f < size && height[f] == i && width == j)
+                    if (f < size && height[f] == y && width == x)
                     {
-                        field[i, j] = '!';
+                        field[y, x] = '!';
                         symbol = '!';
                         f++;
                     }
@@ -339,21 +339,21 @@ namespace Ship_war_vers_2
        
         public static void GenerateField()
         {
-            for (int i = 0; i < height; i++)
+            for (int y = 0; y < height; y++)
             {
                 
                 int numberToChar = 64;
                 numberToChar++;
 
-                for (int j = 0; j < width; j++)
+                for (int x = 0; x < width; x++)
                 {
                     symbol = '.';
-                    if (i != 0 && j != 0)
+                    if (y != 0 && x != 0)
                     {
-                        field[i, j] = symbol;
+                        field[y, x] = symbol;
                     }
                 }
-                field[i, 0] = (char)numberToChar;
+                field[y, 0] = (char)numberToChar;
             }
         }
         public static void Draw(int[] height,int width,int size)
@@ -361,25 +361,25 @@ namespace Ship_war_vers_2
             int numberToChar = 63;
             int number = 47;
             int f = 0;
-            for (int i = 0; i < GridGeneration.height - size  ; i++)
+            for (int y = 0; y < GridGeneration.height - size  ; y++)
             {
                 number++;
-                  for (int j = 0;  j < GridGeneration.width; j++)
+                  for (int x = 0;  x < GridGeneration.width; x++)
                   {
                     numberToChar++;
 
                     symbol = '.';
-                    if (i == 0 && j >= 1)
+                    if (y == 0 && x >= 1)
                     {
                         symbol = (char)numberToChar;
                     }
-                    if (i >= 1 && j == 0)
+                    if (y >= 1 && x == 0)
                     {
                         symbol = (char)number;
                     }
-                    if ( f < size && height[f] == i && width == j )
+                    if ( f < size && height[f] == y && width == x )
                     {
-                        field[i, j] = '!';
+                        field[y, x] = '!';
                         symbol = '!';
                         f++;             
                     }
@@ -413,29 +413,29 @@ namespace Ship_war_vers_2
         {
             int numberToChar = 63;
             int number = 47;
-            for (int i = 0; i < GridGeneration.height - 2; i++)
+            for (int y = 0; y < GridGeneration.height - 2; y++)
             {
                 number++;
-                for (int j = 0; j < GridGeneration.width; j++)
+                for (int x = 0; x < GridGeneration.width; x++)
                 {
                     numberToChar++;
 
-                    symbol = field[i, j];
-                    if (i == 0 && j >= 1)
+                    symbol = field[y, x];
+                    if (y == 0 && x >= 1)
                     {
                         symbol = (char)numberToChar;
                     }
-                    if (i >= 1 && j == 0)
+                    if (y >= 1 && x == 0)
                     {
                         symbol = (char)number;
                     }
-                    if (j == 10)
+                    if (x == 10)
                     {
                         symbol = '|';
                     }
-                    if (height == i && width == j)
+                    if (height == y && width == x)
                     {
-                        field[i, j] = bullet;
+                        field[y, x] = bullet;
                         symbol = bullet;
                     }
                     Console.Write(symbol);
@@ -449,22 +449,22 @@ namespace Ship_war_vers_2
             Console.Clear();
             int numberToChar = 63;
             int number = 47;
-            for (int i = 0; i < height - 2; i++)
+            for (int y = 0; y < height - 2; y++)
             {
                 number++;
-                for (int j = 0; j < width; j++)
+                for (int x = 0; x < width; x++)
                 {
                     numberToChar++;
-                    symbol = field[i, j];
-                    if (i == 0 && j >= 1)
+                    symbol = field[y, x];
+                    if (y == 0 && x >= 1)
                     {
                         symbol = (char)numberToChar;
                     }
-                    if (i >= 1 && j == 0)
+                    if (y >= 1 && x == 0)
                     {
                         symbol = (char)number;
                     }
-                    if (j == 10)
+                    if (x == 10)
                     {
                         symbol = '|';
                     }
@@ -503,7 +503,8 @@ namespace Ship_war_vers_2
             WriteASentence(ConsoleColor.Cyan, "You can play agains our bot.Here some instructions:");
             WriteASentence(ConsoleColor.Cyan, "^ - means you missed");
             WriteASentence(ConsoleColor.Cyan, "# - means you hit");
-            WriteASentence(ConsoleColor.Cyan, "There are no stable quantity of ships,it can either 3,nor 5.But not more than 7");
+            WriteASentence(ConsoleColor.Cyan, "There are no stable quantity of ships,it can either 3,nor 5.But not more than 11");
+            WriteASentence(ConsoleColor.Cyan, "Every ship is single-deck");
             WriteASentence(ConsoleColor.Cyan, "First,who destroyed all of ships - wins!");
             Console.WriteLine();
             WriteASentence(ConsoleColor.Cyan, "Type 'start' to start the game");
@@ -604,12 +605,12 @@ namespace Ship_war_vers_2
         private static  void PlayerStart()
         {
             GridGeneration.GenerateField();
-            ShipGeneration.GenerateShip(1,7);
+            ShipGeneration.GenerateShip(1,11);
         }
         private static void AIStart()
         {
             GridGenerationAI.GenerateFieldAI();
-            ShipGenerationAI.GenerateShip(1, 7);
+            ShipGenerationAI.GenerateShip(1, 11);
         }
         private static void Menu()
         {
