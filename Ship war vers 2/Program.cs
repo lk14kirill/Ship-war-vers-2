@@ -512,7 +512,7 @@ namespace Ship_war_vers_2
         {
             Console.ForegroundColor = color;
             Console.WriteLine(text);
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.ResetColor();
         }
     }
     #endregion
@@ -554,12 +554,12 @@ namespace Ship_war_vers_2
                 {
                     ShipGeneration.ships[i].state = ShipState.destroyed;
                     GridGeneration.Shoot(AIAttackY, AIAttackX, '#');
-                    UI.WriteASentence(ConsoleColor.Cyan, "You ve hit!");
+                    UI.WriteASentence(ConsoleColor.Cyan, "Enemy hit!");
                     return;
                 }
             }
             GridGeneration.Shoot(AIAttackY, AIAttackX, '^');
-            UI.WriteASentence(ConsoleColor.Cyan, "You havent hit");
+            UI.WriteASentence(ConsoleColor.Cyan, "Enemy havent hit");
         }
     }
     #endregion
